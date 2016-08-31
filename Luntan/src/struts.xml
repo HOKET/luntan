@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+    <constant name="struts.devMode" value="true" />
+    <package name="default" extends="struts-default">
+    
+		<!-- 登陆 -->
+	    <action name="login" class="org.action.LoginAction">
+	    	<result name="success">/loginSuccess.jsp</result>
+	    	<result name="error">/login.jsp</result>
+	    	<result name="input">/login.jsp</result>
+	    </action>
+	    
+	    <!-- 注册用户 -->
+       <action name="register" class="org.action.user.AddUserAction">
+            <result name="success">/registerSuccess.jsp</result>
+            <result name="input">/register.jsp</result>
+            <result name="error">/register.jsp</result>
+       </action>
+       
+     	<!-- 查看所有帖子信息 -->
+       <action name="tiezi" class="org.action.tiezi.TieAction">
+   	        <result name="superadmin">/superadmin.jsp</result>
+   	        <result name="admin">/admin.jsp</result>
+   	        <result name="putong">/putong.jsp</result>
+   	        <result name="youke">/youke.jsp</result>
+   	   </action>
+   	   
+   	   <!-- 查看所有用户信息 --> 
+   	   <action name="allUser" class="org.action.user.UserAction">
+   	   		<result name="success">/alluser.jsp</result>
+   	        <result name="input">/alluser.jsp</result>
+   	   </action>
+   	   
+   	   <!-- 添加主题帖子 -->
+       <action name="addTie" class="org.action.tiezi.AddTieAction">
+            <result name="success">/success.jsp</result>
+            <result name="error">/fatie.jsp</result>
+       </action> 
+       
+        <!-- 查看自己的帖子-->
+   	   <action name="mytie" class="org.action.tiezi.GetMyTieAction">
+   	        <result name="success">/mytie.jsp</result>
+   	        <result name="input">/loginSuccess.jsp</result>
+   	   </action>
+   	   
+   	   <!-- 删除帖子 -->
+   	   <action name="deleteTie" class="org.action.tiezi.DeleteTieAction">
+   	        <result name="success">/deleteSuccess.jsp</result>
+   	        <result name="input">/loginSuccess.jsp</result>
+   	   </action>
+   	   
+   	   <!-- 删除用户 -->
+   	   <action name="deleteUser" class="org.action.user.DeleteUserAction"> 
+   	        <result name="success">/deleteSuccess.jsp</result>
+   	        <result name="input">/loginSuccess.jsp</result>
+   	   </action>
+   	   <!-- 升级为管理员 -->
+   	   <action name="addAdmin" class="org.action.user.AddAdminAction">
+   	        <result name="success">/success.jsp</result>
+   	        <result name="input">/success.jsp</result>
+   	   </action>
+   	   <!-- 查看某用户的帖子-->
+   	   <action name="find" class="org.action.tiezi.FindTieAction">
+   	        <result name="success">/find.jsp</result>
+   	        <result name="input">/loginSuccess.jsp</result>
+   	        <result name="error">/failtofind.jsp</result>
+   	   </action>
+   	 
+   	   <!-- 回复主题帖子 -->
+       <action name="huifu" class="org.action.huifu.HuifuAction">
+            <result name="success">/huifu.jsp</result>
+            <result name="error">/huifu.jsp</result>
+       </action>
+       
+       <!-- 添加回复 -->
+       <action name="addHuifu" class="org.action.huifu.AddHuifuAction">
+            <result name="success">/huifuSuccess.jsp</result>
+            <result name="error">/huifu.jsp</result>
+       </action>
+   	   
+   	      	   
+    </package>
+    	
+</struts>

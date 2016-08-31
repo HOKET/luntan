@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE validators PUBLIC "-//Apache Struts//XWork Validator 1.0.2//EN" 
+"http://struts.apache.org/dtds/xwork-validator-1.0.2.dtd">
+
+<validators>
+
+	<field name="user.username">
+		<!--  验证字符串不能为空，即必填-->
+		<field-validator type="requiredstring">
+			<!--去空格-->
+			<param name="trim">true</param>
+			<!--错误提示信息-->
+			<message>账号不能为空！</message>
+		</field-validator>
+	</field>
+
+	<field name="user.password">
+		<field-validator type="requiredstring">
+			<param name="trim">true</param>
+			<message>密码不能为空！</message>
+		</field-validator>
+	</field>
+
+</validators>
+
